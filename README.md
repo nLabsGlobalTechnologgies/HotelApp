@@ -77,6 +77,12 @@ private void btnSave_Click(object sender, EventArgs e)
 }
 
 The "Save" button (btnSave) allows you to add a new category to the database. It checks if the category name is not empty, creates a new Category object, and inserts it into the database using the Insert method from the CategoryManager.
+private void dgvCategory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtName.Text = dgvCategory.CurrentRow.Cells["Name"].Value.ToString();
+            id = Convert.ToInt16(dgvCategory.CurrentRow.Cells["Id"].Value);
+        }
+
 
 Updating a Category
 

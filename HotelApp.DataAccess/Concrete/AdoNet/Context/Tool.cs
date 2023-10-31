@@ -11,7 +11,7 @@ namespace HotelApp.DataAccess.Concrete.AdoNet.Context
             get
             {
                 if (_connection == null)
-                    _connection = new SqlConnection("Data Source=SERVER;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                    _connection = new SqlConnection("your connection informatin");
                 return _connection;
             }
         }

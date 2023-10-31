@@ -13,7 +13,7 @@ Ayrıca, bu proje Singleton tasarım desenini kullanmaktadır.
 
 ### İlerideki Güncellemeler
 
-Bu projede Entity Framework Core ve NHibernate gibi ORM (Nesne İlişkilendirme Yöntemleri) kullandığım. Bu nedenle, gelecekte bu ORM'leri kullanarak veri tabanı işlemlerini optimize etmeyi düşünüyorum.
+Bu projede Entity Framework Core ve NHibernate gibi ORM (Nesne İlişkilendirme Yöntemleri) kullanacagım. Bu nedenle, gelecekte bu ORM'leri kullanarak veri tabanı işlemlerini optimize etmeyi düşünüyorum.
 
 GitHub Proje Bağlantısı: [GitHub HotelApp Projesi](https://github.com/nLabsGlobalTechnologgies/HotelApp)
 

@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Concrete\EntityFrameworkCore\Context\" />
+    <Folder Include="Concrete\EntityFrameworkCore\Repository\" />
+    <Folder Include="Concrete\NHiberNate\Context\" />
+    <Folder Include="Concrete\NHiberNate\Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HotelApp.Interfaces\HotelApp.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

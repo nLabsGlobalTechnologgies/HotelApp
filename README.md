@@ -39,3 +39,99 @@ You mentioned using Object-Relational Mapping (ORM) tools like Entity Framework 
 GitHub Project Link: [GitHub HotelApp Project](https://github.com/nLabsGlobalTechnologgies/HotelApp)
 
 You can explore more details and the project's code on the project's GitHub page.
+
+## Hotel Category Management
+
+In this scenario, we have a Windows Forms application for managing hotel categories. It uses the `CategoryManager` class for various operations.
+
+### Displaying Categories
+
+```csharp
+void ToList()
+{
+    dgvCategory.DataSource = categoryManager.Select();
+}
+
+When the application loads, it fetches and displays a list of hotel categories from the database using the Select method from the CategoryManager.
+
+Adding a Category
+private void btnSave_Click(object sender, EventArgs e)
+{
+    if (txtName.Text.Length != 0)
+        category.Name = txtName.Text;
+    else
+    {
+        MessageBox.Show("Category Name Null Value", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+    }
+    if (categoryManager.Insert(category))
+    {
+        MessageBox.Show("Category addition was successful");
+        ToList();
+        txtName.Text = "";
+    }
+    else
+    {
+        MessageBox.Show("An error occurred while adding the category!");
+    }
+}
+
+The "Save" button (btnSave) allows you to add a new category to the database. It checks if the category name is not empty, creates a new Category object, and inserts it into the database using the Insert method from the CategoryManager.
+
+Updating a Category
+
+private void btnUpdate_Click(object sender, EventArgs e)
+{
+    if (txtName.Text.Length != 0)
+    {
+        category.Id = id;
+        category.Name = txtName.Text;
+    }
+    else
+    {
+        MessageBox.Show("Please select the category you want to update", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+    }
+    if (categoryManager.Update(category))
+    {
+        MessageBox.Show("Category update successful");
+        ToList();
+        txtName.Text = "";
+    }
+    else
+    {
+        MessageBox.Show("An error occurred while updating the category!");
+    }
+}
+
+The "Update" button (btnUpdate) allows you to modify an existing category. It checks if the category name is not empty, updates the selected category using the Update method from the CategoryManager, and refreshes the category list.
+
+Deleting a Category
+
+private void btnDelete_Click(object sender, EventArgs e)
+{
+    if (txtName.Text.Length != 0)
+    {
+        category.Id = id;
+        category.Name = txtName.Text;
+    }
+    else
+    {
+        MessageBox.Show("Please select the category you want to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+    }
+    if (categoryManager.Delete(category))
+    {
+        MessageBox.Show("Category deletion was successful");
+        ToList();
+        txtName.Text = "";
+    }
+    else
+    {
+        MessageBox.Show("An error occurred while deleting the category!");
+    }
+}
+
+The "Delete" button (btnDelete) enables you to remove a category from the database. It verifies if the category name is not empty, deletes the selected category using the Delete method from the CategoryManager, and updates the category list.
+
+This Markdown provides an overview of a basic hotel category management application with functionalities for adding, updating, and deleting categories.
